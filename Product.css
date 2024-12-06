@@ -1,0 +1,144 @@
+:root{
+    --primary-bg: #141414;
+    --secondary-bg: #1F1F1F;
+    --primary-color: #F4A261;
+    --text-color: #C6EBD2;
+}
+
+body{
+    font-family: 'Nunito Sans';
+    margin: 0;
+    background-color: var(--primary-bg);
+}
+
+.product{
+    display: flex;
+    flex-direction: row;
+    margin-top: 110px;
+    gap: 24px;
+    width: 100%;
+
+}
+
+.product_image{
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    max-width: 50%;
+}
+
+.list_of_images{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    overflow-x: auto;
+    height: 100%;
+    margin-left: 10px;
+}
+
+.list_of_images::-webkit-scrollbar{
+    width: 0;
+}
+
+.list_of_images img{
+    background-color: var(--secondary-bg);
+    border-radius: 8px;
+}
+
+.product_info_and_price{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.4em;
+    width: 100%;
+    color: var(--text-color);
+    font-size: 1.25rem;
+}
+
+#product_name{
+    margin: 0;
+}
+
+#product_amount{
+    margin: 0;
+    margin-bottom: 5em;
+    font-size: 2rem;
+}
+
+.value{
+    color: #FFF;
+}
+
+.product_info{
+    display: flex;
+    flex-direction: column;
+    min-height: 28.5em;
+    padding: 0.6em;
+    border-radius: 0.5em;
+    background-color: var(--secondary-bg);
+}
+
+
+.product_properties{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.product_properties>p{
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+.product_price{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5em;
+    color: var(--primary-color);
+    font-size: 2.25rem;
+
+}
+
+.product_price>p{
+    width: 60%;
+    margin: 0;
+}
+
+.add_to_cart_button{
+    width: 50%;
+    min-height: 3rem;
+    border: none;
+    outline: none;
+    border-radius: 0.25em;
+    font-size: 1.5rem;
+    background-color: var(--primary-color);
+    color: #EBEBEB;
+    cursor: pointer;
+}
+
+.description {
+    margin: 8px;
+    color: var(--text-color);
+}
+
+.description>p{
+    color: #FFF;
+}
+
+@media (width < 990px) {
+    .product{
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .product_image{
+
+    }
+}
+
+@media (width < 1200px) {
+    .add_to_cart_button{
+        content: "В корзину";
+    }
+}
