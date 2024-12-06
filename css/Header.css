@@ -108,15 +108,15 @@ label > *{
     cursor: pointer;
 }
 
-#main_page_start{
-    cursor: pointer;
-}
-
 #katalog_button::before{
     content: "\f0c9";
     font-family: FontAwesome;
     color: #FFFFFF;
     margin: 4px;
+}
+
+#main_page_start{
+    cursor: pointer;
 }
 
 input {
