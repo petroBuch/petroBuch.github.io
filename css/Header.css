@@ -114,7 +114,7 @@ label > *{
 
 #katalog_button::before{
     content: "\f0c9";
-    font-family: FontAwesome;
+    font-family: FontAwesome, serif;
     color: #FFFFFF;
     margin: 4px;
 }
