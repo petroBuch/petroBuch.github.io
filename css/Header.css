@@ -112,12 +112,12 @@ label > *{
     cursor: pointer;
 }
 
-/*#katalog_button::before{*/
-/*    content: "\f0c9";*/
-/*    font-family: FontAwesome;*/
-/*    color: #FFFFFF;*/
-/*    margin: 4px;*/
-/*}*/
+#katalog_button::before{
+    content: "\f0c9";
+    font-family: FontAwesome;
+    color: #FFFFFF;
+    margin: 4px;
+}
 
 input {
     width: 100%;
