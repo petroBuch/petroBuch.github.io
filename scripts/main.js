@@ -52,7 +52,7 @@ class ProductCart {
             return;
         }
         for (let i = 0; i < this.products.length; i++) {
-            if (product === this.products[i]) {
+            if (product.name === this.products[i].name && product.price === this.products[i].price) {
                 this.products[i].amount++;
                 return;
             }
