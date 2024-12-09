@@ -17,10 +17,10 @@ function createItems() {
         scroller[i].addEventListener("wheel", function (e) {
             scroller[i].style.scrollBehavior = "smooth";
             if (e.deltaY > 0) {
-                scroller[i].scrollLeft += 100;
+                scroller[i].scrollLeft += 40*e.deltaY;
                 e.preventDefault();
             } else {
-                scroller[i].scrollLeft -= 100;
+                scroller[i].scrollLeft -= 40*e.deltaY;
                 e.preventDefault();
             }
 
