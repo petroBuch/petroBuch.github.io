@@ -13,10 +13,24 @@ function createItems() {
             `
             scroller[i].appendChild(item);
         }
+
+        scroller[i].addEventListener("wheel", function (e) {
+            scroller[i].style.scrollBehavior = "smooth";
+            if (e.deltaY > 0) {
+                scroller[i].scrollLeft += 100;
+                e.preventDefault();
+            } else {
+                scroller[i].scrollLeft -= 100;
+                e.preventDefault();
+            }
+
+        })
     }
 }
 
 createItems();
+
+
 
 
 
@@ -83,9 +97,6 @@ const cart = new ProductCart();
 if (localStorage.getItem('cart') == null) {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
-
-
-
 
 
 
