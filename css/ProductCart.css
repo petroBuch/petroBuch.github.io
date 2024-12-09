@@ -94,6 +94,10 @@ img{
     margin: 1em;
 }
 
+.item_amount>a{
+    background: var(--primary-color);
+}
+
 .controller{
     display: flex;
     flex-direction: row;

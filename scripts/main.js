@@ -94,8 +94,6 @@ if (localStorage.getItem('cart') == null) {
 
 //localStorage.setItem("cart", JSON.stringify(cart));
 
-
-
 for (let i = 0; i < add_to_cart_button.length; i++) {
     add_to_cart_button[i].onclick = () => {
         let product = new Product(add_to_cart_button[i].parentNode);
