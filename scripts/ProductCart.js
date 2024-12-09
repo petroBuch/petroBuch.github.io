@@ -74,7 +74,7 @@ for (let i = 0; i < plus_button.length; i++) {
         cart.addToCart(product);
         localStorage.setItem("cart", JSON.stringify(cart));
         updateTotalPrice();
-        updateCartProducts();
+        plus_button[i].parentNode.children[1].innerText = (parseInt(plus_button[i].parentNode.children[1].innerText) + 1).toString();
     };
 }
 
