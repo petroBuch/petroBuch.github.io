@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel = "stylesheet" href="css/Header.css">
+    <link rel = "stylesheet" href="css/Footer.css">
+  <link rel = "stylesheet" href="css/ProductCart.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <link rel = "icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/ProductCart.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="dv1">
+    <img src="images/favicon.png" alt = "logo" hspace = "8" vspace = "8">
+    <h1 style="color: #C6EBD2;" id="main_page_start"><b>Медовый уголок</b></h1>
+  </div>
+  <nav class="nv1">
+    <button id="katalog_button">Каталог</button>
+    <label>
+      <input type="search" placeholder="Найти в Медовом уголке">
+      <button type="submit" id="search"></button>
+    </label>
+    <button id="user_cart_button"></button>
+    <button id="user_button"></button>
+  </nav>
+</header>
+
+<main>
+  <div class="cart">
+    <div class="total">
+      <div class="total_price">
+        <div>
+          <p id="itogo">Итого:</p>
+          <div id="price"></div>
+        </div>
+        <div>
+          <p>Количество товаров:</p>
+          <div id="total_items"></div>
+        </div>
+      </div>
+      <button id="complete">Заказать</button>
+      <button id="clear_cart">Очистить</button>
+    </div>
+    <div class="products">
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="foot">
+    <nav class="footer_nav1">
+      <a>О нас</a>
+      <a href="#katalog_button">Каталог</a>
+      <a href="#sales">Акции и скидки</a>
+      <a>Доставка и оплата</a>
+      <a>Отзывы</a>
+      <a>ЧаВо</a>
+    </nav>
+    <address>
+      <nav class="footer_nav2">
+        <button class="foot_button" id="yt_button"></button>
+        <button class="foot_button" id="tg_button"></button>
+        <button class="foot_button" id="vk_button"></button>
+      </nav>
+      <p>г. Москва, ул. Сладкая, д. 10, офис 5</p>
+      <a href="tel:74951234567">+7 (495) 123-45-67</a>
+      <a href="mailto:contact@medovyugolok.ru">contact@medovyugolok.ru</a>
+    </address>
+    <div>
+      <div class="footer_div">
+        <img src="images/favicon.png" alt = "logo" hspace = "8" vspace = "8">
+        <h1 style="display: inline-block; color: #fff;"><a href="#main_page_start"><b>Медовый уголок</b></a></h1>
+      </div>
+      <p>Ваши любимые сладости с доставкой на дом.</p>
+    </div>
+  </div>
+  <hr color="#5C4033" width="79%">
+  <p>© 2024 Медовый уголок. Все права защищены</p>
+</footer>
+</body>
+</html>
