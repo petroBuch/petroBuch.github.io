@@ -1,6 +1,3 @@
-let total_price = 0;
-let total_amount = 0;
-
 if (localStorage.getItem("price") == null) {
     localStorage.setItem("price", total_price.toString());
 }
@@ -9,6 +6,8 @@ if (localStorage.getItem("price") == null) {
 function updateTotalPrice() {
     const savedCart = JSON.parse(localStorage.getItem("cart"));
     cart.products = savedCart.products;
+    let total_price = 0;
+    let total_amount = 0;
     for (let i = 0; i < cart.products.length; i++) {
         total_price += cart.products[i].price*cart.products[i].amount;
         total_amount += cart.products[i].amount;
@@ -75,6 +74,7 @@ for (let i = 0; i < plus_button.length; i++) {
         localStorage.setItem("cart", JSON.stringify(cart));
         updateTotalPrice();
         plus_button[i].parentNode.children[1].innerText = (parseInt(plus_button[i].parentNode.children[1].innerText) + 1).toString();
+        plus_button[i].parentNode.parentNode.children[1].innerText = (parseInt(plus_button[i].parentNode.parentNode.children[1].innerText) + product.price).toString();
     };
 }
 
