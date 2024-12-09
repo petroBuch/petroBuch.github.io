@@ -150,3 +150,18 @@ img{
 #clear_cart{
     background: #F43B3B;
 }
+
+.empty_cart_image{
+
+}
+
+.empty_cart{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--primary-bg);
+}
+

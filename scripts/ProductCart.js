@@ -46,9 +46,9 @@ function updateCartProducts(){
         }
     } else {
         let item = document.createElement("div");
-        item.className = "product_item";
+        item.className = "empty_cart";
         item.innerHTML = `
-        <img class="image_source" src="/images/empty_cart.png" alt="empty_cart">
+        <img class="empty_cart_image" src="/images/empty_cart.png" alt="empty_cart">
         <div class="item_amount">
             <h1>Ваша корзина пуста, Милорд!</h1>
             <p>Попробуйте найти то, что Вам понравится в <a href="/index.html" style="color: #F4A261">каталоге</a> продуктов</p>
