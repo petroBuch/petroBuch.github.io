@@ -21,13 +21,15 @@ function updateTotalPrice() {
 updateTotalPrice();
 
 
-const product_list = document.querySelector(".products");
-const savedCart = JSON.parse(localStorage.getItem("cart"));
-cart.products = savedCart.products;
-for (let i = 0; i < cart.products.length; i++) {
-    let item = document.createElement("div");
-    item.className = "product_item";
-    item.innerHTML = `
+function updateCartProducts(){
+    const product_list = document.querySelector(".products");
+    const savedCart = JSON.parse(localStorage.getItem("cart"));
+    cart.products = savedCart.products;
+    if (cart.products.length > 0) {
+        for (let i = 0; i < cart.products.length; i++) {
+            let item = document.createElement("div");
+            item.className = "product_item";
+            item.innerHTML = `
         <img class="image_source" src=${cart.products[i].image_source} alt="product" width="220px" heigth="220px">
         <p class="name">${cart.products[i].name},<br> ${cart.products[i].volume}</p>
         <div class="item_amount">
@@ -40,6 +42,40 @@ for (let i = 0; i < cart.products.length; i++) {
             <div class="price">${cart.products[i].price*cart.products[i].amount} Руб</div>
         </div>
     `
-    product_list.appendChild(item);
+            product_list.appendChild(item);
+        }
+    } else {
+        let item = document.createElement("div");
+        item.className = "product_item";
+        item.innerHTML = `
+        <img class="image_source" src="/images/empty_cart.png" alt="empty_cart">
+        <div class="item_amount">
+            <h1>Ваша корзина пуста, Милорд!</h1>
+            <p>Попробуйте найти то, что Вам понравится в <a href="/index.html">каталоге</a> продуктов</p>
+        </div>
+    `
+        product_list.appendChild(item);
+    }
+
 }
+
+updateCartProducts();
+
+const plus_button = document.getElementsByClassName("plus_button");
+const minus_button = document.getElementsByClassName("minus_button");
+const clear_cart = document.getElementsByClassName("clear_cart");
+const clear_button = document.getElementsByClassName("clear_button");
+
+for (let i = 0; i < plus_button.length; i++) {
+    plus_button[i].onclick = () => {
+        let product = new Product(plus_button[i].parentNode.parentNode.parentNode);
+        const savedCart = JSON.parse(localStorage.getItem("cart"));
+        cart.products = savedCart.products;
+        cart.addToCart(product);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateTotalPrice();
+        updateCartProducts();
+    };
+}
+
 
