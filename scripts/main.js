@@ -16,14 +16,8 @@ function createItems() {
 
         scroller[i].addEventListener("wheel" || "mousedown", function (e) {
             scroller[i].style.scrollBehavior = "smooth";
-            if (e.deltaY > 0) {
-                scroller[i].scrollLeft += 40*e.deltaY;
-                e.preventDefault();
-            } else {
-                scroller[i].scrollLeft -= 40*e.deltaY;
-                e.preventDefault();
-            }
-
+            scroller[i].scrollLeft += 40*e.deltaY;
+            e.preventDefault();
         })
     }
 }
@@ -98,7 +92,7 @@ if (localStorage.getItem('cart') == null) {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-localStorage.setItem("cart", JSON.stringify(cart));
+//localStorage.setItem("cart", JSON.stringify(cart));
 
 
 
