@@ -14,7 +14,7 @@ function createItems() {
             scroller[i].appendChild(item);
         }
 
-        scroller[i].addEventListener("wheel" || "hold", function (e) {
+        scroller[i].addEventListener("wheel" || "mousedown", function (e) {
             scroller[i].style.scrollBehavior = "smooth";
             if (e.deltaY > 0) {
                 scroller[i].scrollLeft += 40*e.deltaY;
