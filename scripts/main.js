@@ -31,6 +31,10 @@ function createItems() {
         for (let j = 0; j < 10; j++) {
             const item = document.createElement("div");
             item.className = "scroll_item";
+            item.dataset.id = product_list[j%4].id;
+            item.dataset.name = product_list[j%4].name;
+            item.dataset.image_source = product_list[j%4].image_source;
+            item.dataset.price = product_list[j%4].price;
             item.innerHTML = `
                 <img class="image_source" src=${product_list[j%4].image_source} alt="product" style="width: 220px; height: 220px">
                 <p class="price">${product_list[j%4].price} Руб <span>1 шт</span></p>
@@ -61,16 +65,17 @@ const add_to_cart_button = document.getElementsByClassName('add_to_cart_button')
 
 
 class Product {
+    id;
     name;
     image_source;
     price;
     volume;
     amount = 1;
     constructor(info) {
-        this.name = info.querySelector(".name").innerText.split(",")[0];
-        this.image_source = info.querySelector(".image_source").src;
-        this.price = parseInt(info.querySelector(".price").innerText.split("Руб")[0]);
-        this.volume = info.querySelector(".name").innerText.split(",")[1];
+        this.name = info.dataset.name;
+        this.image_source = info.dataset.image_source;
+        this.price = parseInt(info.dataset.price);
+        this.volume = info.dataset.name.split(",")[1];
     }
 }
 
@@ -118,7 +123,7 @@ if (localStorage.getItem('cart') == null) {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-localStorage.setItem("cart", JSON.stringify(cart));
+//localStorage.setItem("cart", JSON.stringify(cart));
 
 for (let i = 0; i < add_to_cart_button.length; i++) {
     add_to_cart_button[i].onclick = () => {
