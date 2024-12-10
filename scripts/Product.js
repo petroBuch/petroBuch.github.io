@@ -20,8 +20,8 @@ list_image.addEventListener("wheel" || "mousedown", function (e) {
     e.preventDefault();
 })
 
-let add_to_cart_button = document.getElementById("add_to_cart_button");
-add_to_cart_button.onclick = () => {
+let add_button = document.getElementById("add_to_cart_button");
+add_button.onclick = () => {
     let product = new Product(window);
     const savedCart = JSON.parse(localStorage.getItem("cart"));
     cart.products = savedCart.products;
