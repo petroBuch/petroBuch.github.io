@@ -44,6 +44,10 @@ h2{
     font-size: 20px;
 }
 
+.scroll_item:hover{
+    border: 1px solid var(--primary-color);
+}
+
 .scroll_item>p{
     margin: 0;
 }
