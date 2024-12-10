@@ -113,8 +113,12 @@ class ProductCart {
         }
     }
 
-    deleteCart(){
-        this.products.splice(0, this.products.length);
+    removeAllItem(product) {
+        for (let i = 0; i < this.products.length; i++) {
+            if (product.id === this.products[i].id) {
+                this.products.splice(i, 1);
+            }
+        }
     }
 }
 

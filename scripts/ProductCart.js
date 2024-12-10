@@ -111,7 +111,7 @@ for (let i = 0; i < clear_button.length; i++) {
     clear_button[i].onclick = () => {
         const savedCart = JSON.parse(localStorage.getItem("cart"));
         cart.products = savedCart.products;
-        cart.deleteCart();
+        cart.removeAllItem(product);
         localStorage.setItem("cart", JSON.stringify(cart));
         updateTotalPrice();
         let div = document.getElementById("products");
@@ -126,7 +126,7 @@ clear_cart.onclick = () => {
     localStorage.setItem("cart", JSON.stringify(cart));
     let div = document.getElementById("products");
     let size = div.children.length;
-    for (let i = size; i >= 0; i--) {
+    for (let i = size-1; i >= 0; i--) {
         div.removeChild(div.children[i]);
     }
     updateTotalPrice();
