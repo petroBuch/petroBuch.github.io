@@ -72,6 +72,7 @@ class Product {
     volume;
     amount = 1;
     constructor(info) {
+        this.id = info.dataset.id;
         this.name = info.dataset.name;
         this.image_source = info.dataset.image_source;
         this.price = parseInt(info.dataset.price);
