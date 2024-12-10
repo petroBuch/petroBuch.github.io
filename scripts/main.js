@@ -59,7 +59,17 @@ const cart_button = document.getElementById('user_cart_button');
 const katalog_button = document.getElementById('katalog_button');
 const main_page_start = document.getElementById('main_page_start');
 const add_to_cart_button = document.getElementsByClassName('add_to_cart_button');
+const user_button = document.getElementById('user_button');
 
+function goToProductPage(){window.location = "Product.html";}
+function goToMainPage(){ window.location = "index.html"; }
+function goToCartPage() { window.location = "ProductCart.html"; }
+function goToRegisterPage(){ window.location = "Login.html"; }
+
+cart_button.onclick = goToCartPage;
+katalog_button.onclick = goToMainPage;
+main_page_start.onclick = goToMainPage;
+user_button.onclick = goToRegisterPage;
 
 class Product {
     id;
@@ -135,12 +145,6 @@ for (let i = 0; i < add_to_cart_button.length; i++) {
 }
 
 
-function goToProductPage(){window.location = "Product.html";}
-function goToMainPage(){ window.location = "index.html"; }
-function goToCartPage() { window.location = "ProductCart.html"; }
 
-cart_button.onclick = goToCartPage;
-katalog_button.onclick = goToMainPage;
-main_page_start.onclick = goToMainPage;
 
 

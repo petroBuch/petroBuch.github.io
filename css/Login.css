@@ -1,0 +1,22 @@
+:root{
+    --primary-bg: #141414;
+    --secondary-bg: #292929;
+    --primary-color: #F4A261;
+    --text-color: #C6EBD2;
+}
+
+body{
+    font-family: 'Nunito Sans';
+    margin: 0;
+    background: var(--primary-color);
+}
+
+main{
+    color: var(--text-color);
+}
+
+.login_box{
+    background: var(--primary-bg);
+}
+
+
