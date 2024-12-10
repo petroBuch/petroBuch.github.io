@@ -131,9 +131,3 @@ clear_cart.onclick = () => {
     updateTotalPrice();
     updateCartProducts();
 }
-
-
-
-
-
-
