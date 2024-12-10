@@ -87,12 +87,12 @@ for (let i = 0; i < minus_button.length; i++) {
         let product = new Product(minus_button[i].parentNode.parentNode.parentNode);
         const savedCart = JSON.parse(localStorage.getItem("cart"));
         cart.products = savedCart.products;
-        cart.removeFromCart(product);
         for (let i = 0; i < cart.products.length; i++) {
             if (product.id === cart.products[i].id) {
                 product.amount = cart.products[i].amount;
             }
         }
+        cart.removeFromCart(product);
         localStorage.setItem("cart", JSON.stringify(cart));
         updateTotalPrice();
         if (product.amount === 1)
@@ -108,6 +108,18 @@ for (let i = 0; i < minus_button.length; i++) {
 }
 
 
+for (let i = 0; i < clear_button.length; i++) {
+    clear_button[i].onclick = () => {
+        let product = new Product(clear_button[i].parentNode.parentNode.parentNode);
+        const savedCart = JSON.parse(localStorage.getItem("cart"));
+        cart.products = savedCart.products;
+        cart.removeFromCart(product);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateTotalPrice();
+        let div = document.getElementById("products");
+        div.removeChild(clear_button[i].parentNode.parentNode.parentNode);
+    };
+}
 
 clear_cart.onclick = () => {
     const savedCart = JSON.parse(localStorage.getItem("cart"));
@@ -116,7 +128,7 @@ clear_cart.onclick = () => {
     localStorage.setItem("cart", JSON.stringify(cart));
     let div = document.getElementById("products");
     let size = div.children.length;
-    for (let i = 0; i < size ; i++) {
+    for (let i = size; i >= 0; i--) {
         div.removeChild(div.children[i]);
     }
     updateTotalPrice();
