@@ -38,7 +38,7 @@ function createItems() {
             item.innerHTML = `
                 <img class="image_source" src=${product_list[j%4].image_source} alt="product" onclick="goToProductPage(${item.dataset.id})" style="width: 220px; height: 220px">
                 <p class="price">${product_list[j%4].price} Руб <span>1 шт</span></p>
-                <p class="name" onclick="window.location = 'Product.html'">${product_list[j%4].name},<br> 100 мл</p>
+                <p class="name" onclick="goToProductPage(${item.dataset.id})">${product_list[j%4].name},<br> 100 мл</p>
                 <button class="add_to_cart_button" >В корзину</button>
             `
             scroller[i].appendChild(item);
