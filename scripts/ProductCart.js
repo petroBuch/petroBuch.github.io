@@ -1,7 +1,3 @@
-if (localStorage.getItem("price") == null) {
-    localStorage.setItem("price", total_price.toString());
-}
-
 function updateTotalPrice() {
     const savedCart = JSON.parse(localStorage.getItem("cart"));
     cart.products = savedCart.products;
