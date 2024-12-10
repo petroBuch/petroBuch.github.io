@@ -1,14 +1,40 @@
 let scroller = document.getElementsByClassName("scroller_new");
-let prices = [900, 700, 1000, 1200, 800];
+let product_list = [
+    {
+        id: 1,
+        name: "Крем-мед Медолюбов с черной смородиной",
+        price: 900,
+        image_source: "images/product0.png"
+    },
+    {
+        id: 2,
+        name: "Крем-мед Медолюбов с киви",
+        price: 700,
+        image_source: "images/product1.png"
+    },
+    {
+        id: 3,
+        name: "Крем-мед Медолюбов с малиной",
+        price: 1000,
+        image_source: "images/product2.png"
+    },
+    {
+        id: 4,
+        name: "Крем-мед Медолюбов с облепихой",
+        price: 1200,
+        image_source: "images/product3.png"
+    }
+]
+
 function createItems() {
     for (let i = 0; i < scroller.length; i++) {
         for (let j = 0; j < 10; j++) {
             const item = document.createElement("div");
             item.className = "scroll_item";
             item.innerHTML = `
-                <img class="image_source" src="images/product.png" alt="product" width="220px" heigth="220px">
-                <p class="price">${prices[j%5]} Руб <span>1 шт</span></p>
-                <p class="name">Крем-мед Медолюбов с черной смородиной,<br> 100 мл</p>
+                <img class="image_source" src=${product_list[j%4].image_source} alt="product" width="220px" heigth="220px">
+                <p class="price">${product_list[j%4].price} Руб <span>1 шт</span></p>
+                <p class="name">${product_list[j%4].name},<br> 100 мл</p>
                 <button class="add_to_cart_button" >В корзину</button>
             `
             scroller[i].appendChild(item);
