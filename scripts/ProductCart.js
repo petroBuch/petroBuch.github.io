@@ -28,6 +28,10 @@ function updateCartProducts(){
         for (let i = 0; i < cart.products.length; i++) {
             let item = document.createElement("div");
             item.className = "product_item";
+            item.dataset.id = cart.products[i].id;
+            item.dataset.name = cart.products[i].name;
+            item.dataset.image_source = cart.products[i].image_source;
+            item.dataset.price = cart.products[i].price;
             item.innerHTML = `
         <img class="image_source" src=${cart.products[i].image_source} alt="product" width="220px" heigth="220px">
         <p class="name">${cart.products[i].name},<br> ${cart.products[i].volume}</p>
