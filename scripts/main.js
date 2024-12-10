@@ -32,7 +32,7 @@ function createItems() {
             const item = document.createElement("div");
             item.className = "scroll_item";
             item.innerHTML = `
-                <img class="image_source" src=${product_list[j%4].image_source} alt="product" width="220px" heigth="220px">
+                <img class="image_source" src=${product_list[j%4].image_source} alt="product" style="width: 220px; height: 220px">
                 <p class="price">${product_list[j%4].price} Руб <span>1 шт</span></p>
                 <p class="name">${product_list[j%4].name},<br> 100 мл</p>
                 <button class="add_to_cart_button" >В корзину</button>
@@ -42,7 +42,7 @@ function createItems() {
 
         scroller[i].addEventListener("wheel" || "mousedown", function (e) {
             scroller[i].style.scrollBehavior = "smooth";
-            scroller[i].scrollLeft += 40*e.deltaY;
+            scroller[i].scrollLeft += 20*e.deltaY;
             e.preventDefault();
         })
     }
@@ -118,7 +118,7 @@ if (localStorage.getItem('cart') == null) {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-localStorage.setItem("cart", JSON.stringify(cart));
+//localStorage.setItem("cart", JSON.stringify(cart));
 
 for (let i = 0; i < add_to_cart_button.length; i++) {
     add_to_cart_button[i].onclick = () => {
