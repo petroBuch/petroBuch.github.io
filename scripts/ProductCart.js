@@ -87,6 +87,7 @@ for (let i = 0; i < plus_button.length; i++) {
 
 for (let i = 0; i < minus_button.length; i++) {
         minus_button[i].onclick = () => {
+        console.log(minus_button[i]);
         console.log(minus_button[i].parentNode);
         console.log(minus_button[i].parentNode.parentNode);
         console.log(minus_button[i].parentNode.parentNode.parentNode);
