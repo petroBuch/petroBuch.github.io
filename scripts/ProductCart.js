@@ -27,8 +27,8 @@ function updateCartProducts(){
             item.dataset.image_source = cart.products[i].image_source;
             item.dataset.price = cart.products[i].price;
             item.innerHTML = `
-        <img class="image_source" src=${cart.products[i].image_source} alt="product" width="220px" heigth="220px">
-        <p class="name">${cart.products[i].name},<br> ${cart.products[i].volume}</p>
+        <img class="image_source" src=${cart.products[i].image_source} alt="product" onclick=goToProductPage(cart.products[${i}].id) width="220px" heigth="220px">
+        <p class="name" onclick=goToProductPage(cart.products[${i}].id)>${cart.products[i].name},<br> ${cart.products[i].volume}</p>
         <div class="item_amount">
             <div class="controller">
                 <button class="plus_button">+</button>
@@ -55,6 +55,29 @@ function updateCartProducts(){
     }
 }
 
+window.addEventListener("resize", updateCartDisplay);
+
+function updateCartDisplay(){
+    const product_list = document.querySelector(".products");
+    const savedCart = JSON.parse(localStorage.getItem("cart"));
+    cart.products = savedCart.products;
+    if (window.innerWidth < 650 && window.innerWidth > 500) {
+        if (cart.products.length === 0) {
+            product_list.style.display = "flex";
+            product_list.style.flexDirection = "column";
+        } else {
+            product_list.style.display = "grid";
+            product_list.style.gridTemplateColumns = "1fr 1fr";
+        }
+    }
+
+    else {
+        product_list.style.display = "flex";
+        product_list.style.flexDirection = "column";
+    }
+}
+
+updateCartDisplay();
 updateCartProducts();
 
 
@@ -103,6 +126,7 @@ for (let i = 0; i < minus_button.length; i++) {
             }
             if (cart.products.length === 0) {
                 updateCartProducts();
+                updateCartDisplay();
             }
         };
 }
@@ -120,6 +144,7 @@ for (let i = 0; i < clear_button.length; i++) {
         div.removeChild(button.parentNode.parentNode.parentNode);
         if (cart.products.length === 0) {
             updateCartProducts();
+            updateCartDisplay();
         }
     };
 }
@@ -136,4 +161,8 @@ clear_cart.onclick = () => {
     }
     updateTotalPrice();
     updateCartProducts();
+    updateCartDisplay();
 }
+
+
+

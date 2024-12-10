@@ -17,7 +17,7 @@ header, .dv1, .nv1{
 
 header{
     padding: 12px 0 12px 0;
-    gap: 24px;
+    gap: 2em;
 }
 
 .dv1{

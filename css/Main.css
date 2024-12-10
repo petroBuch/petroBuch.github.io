@@ -70,6 +70,10 @@ span{
     cursor: pointer;
 }
 
+.name, .image_source{
+    cursor: pointer;
+}
+
 
 .add_to_cart_button::after{
     content: "\f217";

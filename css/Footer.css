@@ -103,4 +103,8 @@ hr{
     .foot{
         flex-direction: column;
     }
+
+    .footer_div > img{
+        src: url("images/favicon_big.png");
+    }
 }

@@ -62,7 +62,7 @@ const add_to_cart_button = document.getElementsByClassName('add_to_cart_button')
 const user_button = document.getElementById('user_button');
 
 function goToProductPage(id){
-    window.open("Product.html", "_blank");
+    window.location = "Product.html";
     localStorage.setItem("product_id", id);
 }
 

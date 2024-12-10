@@ -13,8 +13,10 @@ body{
 
 
 .login_box{
-    padding: 2em;
-    margin: 5em;
+    margin-inline: 10vw;
+    margin-block: 15vh;
+    padding-inline: 5vw;
+    padding-block: 5vh;
     background: var(--secondary-bg);
     border-radius: 2em;
     color: #EBEBEB;
@@ -49,7 +51,7 @@ fieldset{
 #fav{
     position: absolute;
     right: 0.1vw;
-    font-size: 4vw;
+    font-size: 2vw;
     color: var(--text-color);
     text-align: center;
     margin: 0;
@@ -69,6 +71,28 @@ fieldset{
     height: 3em;
     cursor: pointer;
     align-self: center;
+}
+
+
+@media (width < 800px) {
+    #fav{
+        display: none;
+    }
+
+    .input_value{
+        width: 50vw;
+    }
+}
+
+@media (width < 400px) {
+    fieldset{
+        border: none;
+        padding: 1em;
+    }
+
+    legend{
+        text-align: center;
+    }
 }
 
 
