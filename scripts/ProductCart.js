@@ -86,6 +86,9 @@ for (let i = 0; i < plus_button.length; i++) {
 }
 
 for (let i = 0; i < minus_button.length; i++) {
+        console.log(minus_button[i].parentNode);
+        console.log(minus_button[i].parentNode.parentNode);
+        console.log(minus_button[i].parentNode.parentNode.parentNode);
         minus_button[i].onclick = () => {
         let product = new Product(minus_button[i].parentNode.parentNode.parentNode);
         const savedCart = JSON.parse(localStorage.getItem("cart"));
