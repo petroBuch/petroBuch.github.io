@@ -1,0 +1,159 @@
+:root{
+    --primary-bg: #141414;
+    --secondary-bg: #292929;
+    --primary-color: #F4A261;
+    --text-color: #C6EBD2;
+}
+
+body{
+    font-family: 'Nunito Sans';
+    margin: 0;
+    background-color: var(--primary-bg);
+}
+
+main{
+    color: var(--text-color);
+}
+
+.welcome{
+    background-image: url("/images/welcome_background.png");
+    min-height: 31.25em;
+}
+
+.welcome h1{
+    font-weight: bold;
+    font-size: 9rem;
+}
+
+.welcome p{
+    color: #EBEBEB;
+    width: 31.25em;
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-indent: 1.25em;
+    text-align: justify;
+}
+
+.mission{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.mission h1{
+    font-weight: bold;
+    font-size: 5rem;
+    margin-bottom: 0;
+}
+
+.mission p{
+    color: #EBEBEB;
+    font-weight: bold;
+    font-size: 2rem;
+    width: 35em;
+    text-align: center;
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.options h1{
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.option_list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    width: 100%;
+}
+
+.option_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 0.5em solid var(--primary-color);
+    border-radius: 0.5em;
+    width: 70%;
+    gap: 0.5em;
+    color: #EBEBEB;
+    font-weight: bold;
+}
+
+.option_item h2{
+    font-size: 2rem;
+    margin: 0;
+}
+
+.achievements{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1em
+}
+
+.achievements h1{
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+.achievement_item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2em;
+    color: #EBEBEB;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.achievement_item p{
+    text-align: center;
+}
+
+.value {
+    font-size: 3rem;
+}
+
+.key {
+    display: flex;
+    border: 0.25em solid var(--primary-color);
+    border-radius: 2em;
+    padding: 1em;
+    width: 4.375em;
+    height: 4.375em;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact h1{
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+.contact_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #EBEBEB;
+    font-weight: bold;
+    font-size: 2rem;
+    width: 70%;
+}
+
+.contact_item p{
+    text-align: center;
+}
