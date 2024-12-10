@@ -8,15 +8,68 @@
 body{
     font-family: 'Nunito Sans';
     margin: 0;
-    background: var(--primary-color);
+    background: url("images/background.png");
 }
 
-main{
-    color: var(--text-color);
-}
 
 .login_box{
-    background: var(--primary-bg);
+    padding: 2em;
+    margin: 5em;
+    background: var(--secondary-bg);
+    border-radius: 2em;
+    color: #EBEBEB;
 }
+
+input{
+    background: var(--secondary-bg);
+}
+
+legend{
+    font-size: 2em;
+    font-weight: bold;
+}
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2em;
+}
+
+
+.login{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+#fav{
+    position: absolute;
+    right: 0.1vw;
+    font-size: 4vw;
+    color: var(--text-color);
+    text-align: center;
+    margin: 0;
+}
+
+#fav img{
+    width: 10vw;
+    height: 10vw;
+}
+
+#login_button{
+    margin-top: 20%;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 1em;
+    width: 50%;
+    height: 3em;
+    cursor: pointer;
+    align-self: center;
+}
+
 
 
