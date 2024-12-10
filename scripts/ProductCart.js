@@ -66,7 +66,7 @@ updateCartProducts();
 
 const plus_button = document.getElementsByClassName("plus_button");
 const minus_button = document.getElementsByClassName("minus_button");
-const clear_cart = document.getElementsByClassName("clear_cart");
+const clear_cart = document.getElementById("clear_cart");
 const clear_button = document.getElementsByClassName("clear_button");
 
 for (let i = 0; i < plus_button.length; i++) {
@@ -80,6 +80,17 @@ for (let i = 0; i < plus_button.length; i++) {
         plus_button[i].parentNode.children[1].innerText = (parseInt(plus_button[i].parentNode.children[1].innerText) + 1).toString();
         plus_button[i].parentNode.parentNode.children[1].innerText = (parseInt(plus_button[i].parentNode.parentNode.children[1].innerText) + product.price).toString() + "Руб";
     };
+}
+
+clear_cart.onclick = () => {
+    const savedCart = JSON.parse(localStorage.getItem("cart"));
+    cart.products = savedCart.products;
+    cart.products = [];
+    localStorage.setItem("cart", JSON.stringify(cart));
+    let div = document.getElementById("products");
+    for (let i = 0; i < div.children.length ; i++) {
+        div.removeChild(div.children[i]);
+    }
 }
 
 
