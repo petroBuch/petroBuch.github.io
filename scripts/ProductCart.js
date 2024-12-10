@@ -107,7 +107,6 @@ for (let i = 0; i < minus_button.length; i++) {
     };
 }
 
-
 for (let i = 0; i < clear_button.length; i++) {
     clear_button[i].onclick = () => {
         const savedCart = JSON.parse(localStorage.getItem("cart"));
