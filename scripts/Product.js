@@ -9,3 +9,9 @@ for (let i=0; i < 7; i++) {
     image.className = "mini_image";
     list_image.appendChild(image);
 }
+
+list_image.addEventListener("wheel" || "mousedown", function (e) {
+    list_image.style.scrollBehavior = "smooth";
+    list_image.scrollLeft += 20*e.deltaY;
+    e.preventDefault();
+})
