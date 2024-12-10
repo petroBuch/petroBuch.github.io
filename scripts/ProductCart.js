@@ -110,10 +110,9 @@ for (let i = 0; i < minus_button.length; i++) {
 
 for (let i = 0; i < clear_button.length; i++) {
     clear_button[i].onclick = () => {
-        let product = new Product(clear_button[i].parentNode.parentNode.parentNode);
         const savedCart = JSON.parse(localStorage.getItem("cart"));
         cart.products = savedCart.products;
-        cart.removeFromCart(product);
+        cart.deleteCart();
         localStorage.setItem("cart", JSON.stringify(cart));
         updateTotalPrice();
         let div = document.getElementById("products");
