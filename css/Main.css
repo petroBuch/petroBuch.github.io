@@ -94,7 +94,6 @@ span{
     display: flex;
     flex-direction: column;
     gap: 20px;
-
 }
 
 @media (width < 400px) {
