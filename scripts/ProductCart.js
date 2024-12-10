@@ -78,7 +78,7 @@ for (let i = 0; i < plus_button.length; i++) {
         localStorage.setItem("cart", JSON.stringify(cart));
         updateTotalPrice();
         plus_button[i].parentNode.children[1].innerText = (parseInt(plus_button[i].parentNode.children[1].innerText) + 1).toString();
-        plus_button[i].parentNode.parentNode.children[1].innerText = (parseInt(plus_button[i].parentNode.parentNode.children[1].innerText) + product.price).toString() + "Руб";
+        plus_button[i].parentNode.parentNode.children[1].innerText = (parseInt(plus_button[i].parentNode.parentNode.children[1].innerText) + product.price).toString() + " Руб";
     };
 }
 
@@ -91,6 +91,8 @@ clear_cart.onclick = () => {
     for (let i = 0; i < div.children.length ; i++) {
         div.removeChild(div.children[i]);
     }
+    updateTotalPrice();
+    updateCartProducts();
 }
 
 

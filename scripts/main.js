@@ -70,14 +70,13 @@ class Product {
     name;
     image_source;
     price;
-    volume;
+    volume = "100 мл";
     amount = 1;
     constructor(info) {
         this.id = info.dataset.id;
         this.name = info.dataset.name;
         this.image_source = info.dataset.image_source;
         this.price = parseInt(info.dataset.price);
-        this.volume = info.dataset.name.split(",")[1];
     }
 }
 
