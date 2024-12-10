@@ -1,8 +1,9 @@
 let id = parseInt(localStorage.getItem("product_id"));
-window.dataset.id = id.toString();
-window.dataset.name = product_list[id-1].name;
-window.dataset.price = product_list[id-1].price;
-window.dataset.image_source = product_list[id-1].image_source;
+let html = document.querySelector("html");
+html.dataset.id = id.toString();
+html.dataset.name = product_list[id-1].name;
+html.dataset.price = product_list[id-1].price;
+html.dataset.image_source = product_list[id-1].image_source;
 document.querySelector("#product_name").innerText = product_list[id-1].name;
 document.querySelector("#price").innerText = product_list[id-1].price + " Руб";
 document.querySelector("#main_image").src = product_list[id-1].image_source;
@@ -22,7 +23,7 @@ list_image.addEventListener("wheel" || "mousedown", function (e) {
 
 let add_button = document.getElementById("add_to_cart_button");
 add_button.onclick = () => {
-    let product = new Product(window);
+    let product = new Product(html);
     const savedCart = JSON.parse(localStorage.getItem("cart"));
     cart.products = savedCart.products;
     cart.addToCart(product);
