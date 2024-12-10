@@ -121,10 +121,7 @@ for (let i = 0; i < clear_button.length; i++) {
         localStorage.setItem("cart", JSON.stringify(cart));
         updateTotalPrice();
         let div = document.getElementById("products");
-        let size = div.children.length;
-        for (let i = size-1; i >= 0; i--) {
-            div.removeChild(div.children[i]);
-        }
+        div.removeChild(minus_button[i].parentNode.parentNode.parentNode);
         console.log(minus_button);
         updateCartProducts();
         updateElements();
