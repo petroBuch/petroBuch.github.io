@@ -65,23 +65,23 @@ let clear_button = document.getElementsByClassName("clear_button");
 
 
 for (let i = 0; i < plus_button.length; i++) {
-    let par = plus_button[i].parentNode.parentNode.parentNode;
-    plus_button[i].onclick = () => {
-        let product = new Product(par);
+    let button = plus_button[i];
+    button.onclick = () => {
+        let product = new Product(button.parentNode.parentNode.parentNode);
         const savedCart = JSON.parse(localStorage.getItem("cart"));
         cart.products = savedCart.products;
         cart.addToCart(product);
         localStorage.setItem("cart", JSON.stringify(cart));
         updateTotalPrice();
-        plus_button[i].parentNode.children[1].innerText = (parseInt(plus_button[i].parentNode.children[1].innerText) + 1).toString();
-        plus_button[i].parentNode.parentNode.children[1].innerText = (parseInt(plus_button[i].parentNode.parentNode.children[1].innerText) + product.price).toString() + " Руб";
+        button.parentNode.children[1].innerText = (parseInt(button.parentNode.children[1].innerText) + 1).toString();
+        button.parentNode.parentNode.children[1].innerText = (parseInt(button.parentNode.parentNode.children[1].innerText) + product.price).toString() + " Руб";
     };
 }
 
 for (let i = 0; i < minus_button.length; i++) {
-        let par = minus_button[i].parentNode.parentNode.parentNode;
-        minus_button[i].onclick = () => {
-            let product = new Product(par);
+        let button = minus_button[i];
+        button.onclick = () => {
+            let product = new Product(button.parentNode.parentNode.parentNode);
             const savedCart = JSON.parse(localStorage.getItem("cart"));
             cart.products = savedCart.products;
             for (let i = 0; i < cart.products.length; i++) {
@@ -95,26 +95,26 @@ for (let i = 0; i < minus_button.length; i++) {
             if (product.amount === 1)
             {
                 let div = document.getElementById("products");
-                div.removeChild(par);
+                div.removeChild(button.parentNode.parentNode.parentNode);
             }
             else{
-                minus_button[i].parentNode.children[1].innerText = (parseInt(minus_button[i].parentNode.children[1].innerText) - 1).toString();
-                minus_button[i].parentNode.parentNode.children[1].innerText = (parseInt(minus_button[i].parentNode.parentNode.children[1].innerText) - product.price).toString() + " Руб";
+                button.parentNode.children[1].innerText = (parseInt(button.parentNode.children[1].innerText) - 1).toString();
+                button.parentNode.parentNode.children[1].innerText = (parseInt(button.parentNode.parentNode.children[1].innerText) - product.price).toString() + " Руб";
             }
         };
 }
 
 for (let i = 0; i < clear_button.length; i++) {
-    let par = clear_button[i].parentNode.parentNode.parentNode;
-    clear_button[i].onclick = () => {
-        let product = new Product(par);
+    let button = clear_button[i];
+    button.onclick = () => {
+        let product = new Product(button.parentNode.parentNode.parentNode);
         const savedCart = JSON.parse(localStorage.getItem("cart"));
         cart.products = savedCart.products;
         cart.removeAllItem(product);
         localStorage.setItem("cart", JSON.stringify(cart));
         updateTotalPrice();
         let div = document.getElementById("products");
-        div.removeChild(par);
+        div.removeChild(button.parentNode.parentNode.parentNode);
     };
 }
 
