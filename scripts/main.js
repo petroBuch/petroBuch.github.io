@@ -61,7 +61,6 @@ const main_page_start = document.getElementById('main_page_start');
 const add_to_cart_button = document.getElementsByClassName('add_to_cart_button');
 
 
-
 class Product {
     id;
     name;
