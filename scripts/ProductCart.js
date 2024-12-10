@@ -88,6 +88,11 @@ for (let i = 0; i < minus_button.length; i++) {
         const savedCart = JSON.parse(localStorage.getItem("cart"));
         cart.products = savedCart.products;
         cart.removeFromCart(product);
+        for (let i = 0; i < cart.products.length; i++) {
+            if (product.id === cart.products[i].id) {
+                product.amount = cart.products[i].amount;
+            }
+        }
         localStorage.setItem("cart", JSON.stringify(cart));
         updateTotalPrice();
         if (product.amount === 1)
@@ -110,7 +115,8 @@ clear_cart.onclick = () => {
     cart.products = [];
     localStorage.setItem("cart", JSON.stringify(cart));
     let div = document.getElementById("products");
-    for (let i = 0; i < div.children.length ; i++) {
+    let size = div.children.length;
+    for (let i = 0; i < size ; i++) {
         div.removeChild(div.children[i]);
     }
     updateTotalPrice();

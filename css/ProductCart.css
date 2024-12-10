@@ -165,3 +165,7 @@ img{
     background: var(--primary-bg);
 }
 
+.image_source{
+    margin: 0.5em;
+}
+
