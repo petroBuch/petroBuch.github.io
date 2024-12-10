@@ -55,9 +55,6 @@ function createItems() {
 createItems();
 
 
-
-
-
 const cart_button = document.getElementById('user_cart_button');
 const katalog_button = document.getElementById('katalog_button');
 const main_page_start = document.getElementById('main_page_start');
