@@ -57,10 +57,19 @@ function updateCartProducts(){
 
 updateCartProducts();
 
-const plus_button = document.getElementsByClassName("plus_button");
-const minus_button = document.getElementsByClassName("minus_button");
-const clear_cart = document.getElementById("clear_cart");
-const clear_button = document.getElementsByClassName("clear_button");
+
+let plus_button = document.getElementsByClassName("plus_button");
+let minus_button = document.getElementsByClassName("minus_button");
+let clear_cart = document.getElementById("clear_cart");
+let clear_button = document.getElementsByClassName("clear_button");
+
+function updateElements(){
+    plus_button = document.getElementsByClassName("plus_button");
+    minus_button = document.getElementsByClassName("minus_button");
+    clear_cart = document.getElementById("clear_cart");
+    clear_button = document.getElementsByClassName("clear_button");
+}
+
 
 for (let i = 0; i < plus_button.length; i++) {
     plus_button[i].onclick = () => {
@@ -72,6 +81,7 @@ for (let i = 0; i < plus_button.length; i++) {
         updateTotalPrice();
         plus_button[i].parentNode.children[1].innerText = (parseInt(plus_button[i].parentNode.children[1].innerText) + 1).toString();
         plus_button[i].parentNode.parentNode.children[1].innerText = (parseInt(plus_button[i].parentNode.parentNode.children[1].innerText) + product.price).toString() + " Руб";
+        updateElements();
     };
 }
 
@@ -97,6 +107,7 @@ for (let i = 0; i < minus_button.length; i++) {
             minus_button[i].parentNode.children[1].innerText = (parseInt(minus_button[i].parentNode.children[1].innerText) - 1).toString();
             minus_button[i].parentNode.parentNode.children[1].innerText = (parseInt(minus_button[i].parentNode.parentNode.children[1].innerText) - product.price).toString() + " Руб";
         }
+        updateElements()
     };
 }
 
@@ -110,7 +121,7 @@ for (let i = 0; i < clear_button.length; i++) {
         updateTotalPrice();
         let div = document.getElementById("products");
         div.removeChild(clear_button[i].parentNode.parentNode.parentNode);
-        updateCartProducts();
+        updateElements();
     };
 }
 
@@ -126,4 +137,5 @@ clear_cart.onclick = () => {
     }
     updateTotalPrice();
     updateCartProducts();
+    updateElements();
 }
