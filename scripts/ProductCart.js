@@ -110,7 +110,6 @@ for (let i = 0; i < clear_button.length; i++) {
         updateTotalPrice();
         let div = document.getElementById("products");
         div.removeChild(clear_button[i].parentNode.parentNode.parentNode);
-        updateCartProducts();
     };
 }
 
