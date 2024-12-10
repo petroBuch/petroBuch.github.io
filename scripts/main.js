@@ -102,7 +102,7 @@ class ProductCart {
 
     removeFromCart(product) {
         for (let i = 0; i < this.products.length; i++) {
-            if (product === this.products[i]) {
+            if (product.id === this.products[i].id) {
                 if (this.products[i].amount > 1) {
                     this.products[i].amount--;
                     return;

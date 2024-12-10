@@ -82,6 +82,28 @@ for (let i = 0; i < plus_button.length; i++) {
     };
 }
 
+for (let i = 0; i < minus_button.length; i++) {
+        minus_button[i].onclick = () => {
+        let product = new Product(minus_button[i].parentNode.parentNode.parentNode);
+        const savedCart = JSON.parse(localStorage.getItem("cart"));
+        cart.products = savedCart.products;
+        cart.removeFromCart(product);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateTotalPrice();
+        if (product.amount === 1)
+        {
+            let div = document.getElementById("products");
+            div.removeChild(minus_button[i].parentNode.parentNode.parentNode);
+        }
+        else{
+            minus_button[i].parentNode.children[1].innerText = (parseInt(minus_button[i].parentNode.children[1].innerText) - 1).toString();
+            minus_button[i].parentNode.parentNode.children[1].innerText = (parseInt(minus_button[i].parentNode.parentNode.children[1].innerText) - product.price).toString() + " Руб";
+        }
+    };
+}
+
+
+
 clear_cart.onclick = () => {
     const savedCart = JSON.parse(localStorage.getItem("cart"));
     cart.products = savedCart.products;
@@ -94,5 +116,6 @@ clear_cart.onclick = () => {
     updateTotalPrice();
     updateCartProducts();
 }
+
 
 
