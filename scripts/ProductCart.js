@@ -113,19 +113,16 @@ for (let i = 0; i < minus_button.length; i++) {
 
 for (let i = 0; i < clear_button.length; i++) {
     clear_button[i].onclick = () => {
-        console.log(minus_button);
-        let product = new Product(minus_button[i].parentNode.parentNode.parentNode);
+        let product = new Product(clear_button[i].parentNode.parentNode.parentNode);
         const savedCart = JSON.parse(localStorage.getItem("cart"));
         cart.products = savedCart.products;
         cart.removeAllItem(product);
         localStorage.setItem("cart", JSON.stringify(cart));
         updateTotalPrice();
         let div = document.getElementById("products");
-        div.removeChild(minus_button[i].parentNode.parentNode.parentNode);
-        console.log(minus_button);
+        div.removeChild(clear_button[i].parentNode.parentNode.parentNode);
         updateCartProducts();
         updateElements();
-        console.log(minus_button);
     };
 }
 
