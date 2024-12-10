@@ -101,6 +101,9 @@ for (let i = 0; i < minus_button.length; i++) {
                 button.parentNode.children[1].innerText = (parseInt(button.parentNode.children[1].innerText) - 1).toString();
                 button.parentNode.parentNode.children[1].innerText = (parseInt(button.parentNode.parentNode.children[1].innerText) - product.price).toString() + " Руб";
             }
+            if (cart.products.length === 0) {
+                updateCartProducts();
+            }
         };
 }
 
@@ -115,6 +118,9 @@ for (let i = 0; i < clear_button.length; i++) {
         updateTotalPrice();
         let div = document.getElementById("products");
         div.removeChild(button.parentNode.parentNode.parentNode);
+        if (cart.products.length === 0) {
+            updateCartProducts();
+        }
     };
 }
 
