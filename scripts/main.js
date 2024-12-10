@@ -36,7 +36,7 @@ function createItems() {
             item.dataset.image_source = product_list[j%4].image_source;
             item.dataset.price = product_list[j%4].price;
             item.innerHTML = `
-                <img class="image_source" src=${product_list[j%4].image_source} alt="product" onclick="goToProductPage(${item})" style="width: 220px; height: 220px">
+                <img class="image_source" src=${product_list[j%4].image_source} alt="product" onclick="goToProductPage(${item.dataset.id})" style="width: 220px; height: 220px">
                 <p class="price">${product_list[j%4].price} Руб <span>1 шт</span></p>
                 <p class="name" onclick="window.location = 'Product.html'">${product_list[j%4].name},<br> 100 мл</p>
                 <button class="add_to_cart_button" >В корзину</button>
@@ -61,17 +61,12 @@ const main_page_start = document.getElementById('main_page_start');
 const add_to_cart_button = document.getElementsByClassName('add_to_cart_button');
 const user_button = document.getElementById('user_button');
 
-function goToProductPage(item){
-    window.location = "Product.html";
-    document.querySelector("#name").innerText = item.name;
-    document.querySelector("#price").innerText = item.price + " Руб";
-    document.querySelector("#main_image").innerText = item.image_source;
-    let list = document.getElementById("list_of_images");
-    for (let i=0; i < 7; i++){
-        let image = document.createElement("img");
-        image.src = item.image_source;
-    }
+function goToProductPage(id){
+    window.open("Product.html", "_blank");
+    localStorage.setItem("product_id", id);
 }
+
+
 function goToMainPage(){ window.location = "index.html"; }
 function goToCartPage() { window.location = "ProductCart.html"; }
 function goToRegisterPage(){ window.location = "Login.html"; }
