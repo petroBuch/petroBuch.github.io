@@ -16,20 +16,29 @@ main{
 }
 
 .welcome{
-    background-image: url("/images/welcome_background.png");
+    position: relative;
     min-height: 31.25em;
+}
+
+.welcome::before{
+    content: url("/images/welcome_background.png");
+    position: absolute;
+    right: 40vw;
+    width: 200px;
+    height: 200px;
+    z-index: -1;
 }
 
 .welcome h1{
     font-weight: bold;
-    font-size: 9rem;
+    font-size: 10vw;
 }
 
 .welcome p{
     color: #EBEBEB;
-    width: 31.25em;
+    width: 40vw;
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 3vw;
     text-indent: 1.25em;
     text-align: justify;
 }
@@ -43,15 +52,15 @@ main{
 
 .mission h1{
     font-weight: bold;
-    font-size: 5rem;
+    font-size: 5vw;
     margin-bottom: 0;
 }
 
 .mission p{
     color: #EBEBEB;
     font-weight: bold;
-    font-size: 2rem;
-    width: 35em;
+    font-size: 3vw;
+    width: 50vw;
     text-align: center;
 }
 
@@ -62,7 +71,7 @@ main{
 }
 
 .options h1{
-    font-size: 5rem;
+    font-size: 5vw;
     font-weight: bold;
 }
 
@@ -71,7 +80,7 @@ main{
     flex-direction: column;
     align-items: center;
     gap: 1.5em;
-    width: 100%;
+    width: 80vw;
 }
 
 .option_item{
@@ -81,14 +90,15 @@ main{
     text-align: center;
     border: 0.5em solid var(--primary-color);
     border-radius: 0.5em;
-    width: 70%;
+    width: 100%;
     gap: 0.5em;
     color: #EBEBEB;
     font-weight: bold;
+    font-size: 1.25vw;
 }
 
 .option_item h2{
-    font-size: 2rem;
+    font-size: 3vw;
     margin: 0;
 }
 
@@ -96,12 +106,13 @@ main{
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 1em
+    gap: 1em;
+    margin-left: 1em;
 }
 
 .achievements h1{
     font-weight: bold;
-    font-size: 5rem;
+    font-size: 5vw;
 }
 
 .achievement_item{
@@ -111,7 +122,7 @@ main{
     gap: 2em;
     color: #EBEBEB;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 2vw;
 }
 
 .achievement_item p{
@@ -119,7 +130,7 @@ main{
 }
 
 .value {
-    font-size: 3rem;
+    font-size: 2vw;
 }
 
 .key {
@@ -127,8 +138,8 @@ main{
     border: 0.25em solid var(--primary-color);
     border-radius: 2em;
     padding: 1em;
-    width: 4.375em;
-    height: 4.375em;
+    width: 10vw;
+    height: 10vw;
     align-items: center;
     justify-content: center;
 }
@@ -141,7 +152,7 @@ main{
 
 .contact h1{
     font-weight: bold;
-    font-size: 5rem;
+    font-size: 5vw;
 }
 
 .contact_item{
@@ -150,10 +161,27 @@ main{
     align-items: center;
     color: #EBEBEB;
     font-weight: bold;
-    font-size: 2rem;
-    width: 70%;
+    font-size: 2vw;
+    width: 70vw;
 }
 
 .contact_item p{
     text-align: center;
+}
+
+@media (width < 1250px) {
+    .welcome{
+        min-height: 0;
+    }
+
+    .welcome::before{
+        display: none;
+    }
+
+    .welcome > p{
+        width: 80vw;
+        text-align: center;
+        align-self: center;
+        justify-self: center;
+    }
 }
