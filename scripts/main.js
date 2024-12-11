@@ -16,7 +16,7 @@ let product_list = [
         id: 3,
         name: "Крем-мед Медолюбов с малиной",
         price: 1000,
-        image_source: "images/product11.png"
+        image_source: "images/product2.png"
     },
     {
         id: 4,
