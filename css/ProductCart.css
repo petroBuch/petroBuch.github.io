@@ -19,7 +19,7 @@ main{
     display: flex;
     flex-direction: row;
     gap: 1.25em;
-    margin: 6.25em 0.5em 9em 0.5em;
+    margin: 6.25em 0.5em 16em 0.5em;
     color: #FFF;
 }
 
