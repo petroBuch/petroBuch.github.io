@@ -163,6 +163,3 @@ clear_cart.onclick = () => {
     updateCartProducts();
     updateCartDisplay();
 }
-
-
-
